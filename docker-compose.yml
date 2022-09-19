@@ -2,8 +2,9 @@ version: "3.9"
 services:
   app:
     volumes:
-      - ./:/myapp
-      - data:/myapp
+      - ./src:/myapp/src
+      - ./Cargo.lock:/myapp/Cargo.lock
+      - ./Cargo.toml:/myapp/Cargo.toml
     build:
       context: .
       dockerfile: ./docker/Dockerfile
